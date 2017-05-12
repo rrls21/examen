@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?php if($msg==''){ ?>
+<employees>
+    <?php foreach ($lista_empleados as  $value) { ?>
+    <employee>
+        <id><?php echo $value->id; ?></id>
+        <isOnline><?php echo $value->isOnline; ?></isOnline>
+        <salary><?php echo $value->salary; ?></salary>
+		<age><?php echo $value->age; ?></age>
+		<position><?php echo $value->position; ?></position>
+		<name><?php echo $value->name; ?></name>
+		<gender><?php echo $value->gender; ?></gender>
+		<email><?php echo $value->email; ?></email>
+		<phone><?php echo $value->phone; ?></phone>
+		<address><?php echo $value->address; ?></address>
+		<skills>
+		<?php foreach ($value->skills as $item) {  ?>
+			<skill><?php echo $item->skill; ?></skill>
+		<?php } ?>
+		</skills>
+	</employee>
+    <?php } ?>
+</employees>
+<?php }else { ?>
+<error><?php echo $msg;?></error>
+<?php } ?>
